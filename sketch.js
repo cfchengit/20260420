@@ -31,8 +31,6 @@ function draw() {
   pg.clear();
   
   pg.noStroke();
-  pg.textAlign(CENTER, CENTER);
-  pg.textSize(8); // 縮小文字以符合 20x20 的單位大小
   
   // 載入攝影機像素資料
   capture.loadPixels();
@@ -59,10 +57,6 @@ function draw() {
         // 將計算出的平均值設為顏色填滿該 20x20 單位
         pg.fill(avg);
         pg.rect(x, y, step, step);
-        
-        // 在單位中心顯示數值文字，為了清晰度，根據背景亮度切換文字黑白
-        pg.fill(avg > 128 ? 0 : 255);
-        pg.text(avg, x + step / 2, y + step / 2);
       }
     }
   }
