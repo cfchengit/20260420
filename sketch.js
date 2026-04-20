@@ -16,7 +16,12 @@ function draw() {
   let x = (width - w) / 2;
   let y = (height - h) / 2;
   
+  // 翻轉 X 軸以解決攝影機左右顛倒的問題
+  push();
+  translate(width, 0);
+  scale(-1, 1);
   image(capture, x, y, w, h);
+  pop();
 }
 
 function windowResized() {
